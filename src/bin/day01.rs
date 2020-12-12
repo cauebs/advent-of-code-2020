@@ -3,7 +3,7 @@ use std::collections::HashSet;
 const TARGET: u32 = 2020;
 
 fn main() {
-    let lines = include_str!("../../inputs/day1.txt").lines();
+    let lines = include_str!("../../inputs/day01.txt").lines();
 
     let (low_values, high_values): (HashSet<_>, HashSet<_>) = lines
         .map(|line| line.parse::<u32>().expect("line must contain digits only"))

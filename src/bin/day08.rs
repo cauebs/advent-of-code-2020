@@ -51,7 +51,7 @@ fn execute(program: &[Instruction]) -> Result<i32, i32> {
 }
 
 struct Patch {
-    corrupted_instruction: usize,
+    _corrupted_instruction: usize,
     correct_output: i32,
 }
 
@@ -70,7 +70,7 @@ fn fix_program(program: &[Instruction]) -> Option<Patch> {
 
         if let Ok(output) = execute(&patched_program) {
             return Some(Patch {
-                corrupted_instruction: i,
+                _corrupted_instruction: i,
                 correct_output: output,
             });
         }
@@ -80,7 +80,7 @@ fn fix_program(program: &[Instruction]) -> Option<Patch> {
 }
 
 fn main() {
-    let program = include_str!("../../inputs/day8.txt")
+    let program = include_str!("../../inputs/day08.txt")
         .lines()
         .filter_map(|line| line.parse().ok())
         .collect::<Vec<Instruction>>();

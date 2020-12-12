@@ -63,7 +63,7 @@ impl<'a> Passport<'a> {
 }
 
 fn main() {
-    let input = include_str!("../../inputs/day4.txt");
+    let input = include_str!("../../inputs/day04.txt");
 
     let field_regex = Regex::new(r"^(?P<name>\w{3}):(?P<value>.+)$").unwrap();
 

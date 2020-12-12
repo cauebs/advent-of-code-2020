@@ -57,7 +57,7 @@ impl Policy for TobogganCorporatePolicy {
 }
 
 fn main() {
-    let entries = include_str!("../../inputs/day2.txt")
+    let entries = include_str!("../../inputs/day02.txt")
         .lines()
         .filter_map(|line| line.parse::<Entry>().ok())
         .collect::<Vec<_>>();

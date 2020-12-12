@@ -4,7 +4,7 @@ use std::{
 };
 
 fn main() {
-    let groups_answers = include_str!("../../inputs/day6.txt")
+    let groups_answers = include_str!("../../inputs/day06.txt")
         .split("\n\n")
         .map(|group| {
             group

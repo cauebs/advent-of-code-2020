@@ -63,7 +63,7 @@ fn count_contents<'a>(color: Color<'a>, rules: &Rules<'a>) -> u32 {
 }
 
 fn main() {
-    let rules = include_str!("../../inputs/day7.txt")
+    let rules = include_str!("../../inputs/day07.txt")
         .lines()
         .filter_map(parse_rule)
         .collect::<HashMap<&str, HashMap<_, _>>>();

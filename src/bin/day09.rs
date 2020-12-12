@@ -29,7 +29,7 @@ fn find_contiguous_sum(target: u32, slice: &[u32]) -> Option<&[u32]> {
 }
 
 fn main() {
-    let stream = include_str!("../../inputs/day9.txt")
+    let stream = include_str!("../../inputs/day09.txt")
         .lines()
         .filter_map(|line| line.parse().ok())
         .collect::<Vec<u32>>();

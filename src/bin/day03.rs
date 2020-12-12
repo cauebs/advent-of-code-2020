@@ -1,7 +1,7 @@
 use std::collections::BTreeMap;
 
 fn main() {
-    let input = include_str!("../../inputs/day3.txt");
+    let input = include_str!("../../inputs/day03.txt");
 
     let tree_map: BTreeMap<_, _> = input
         .lines()

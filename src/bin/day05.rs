@@ -13,7 +13,7 @@ fn parse_seat_id(s: &str) -> u32 {
 }
 
 fn main() {
-    let seat_ids = include_str!("../../inputs/day5.txt")
+    let seat_ids = include_str!("../../inputs/day05.txt")
         .lines()
         .map(parse_seat_id)
         .collect::<BTreeSet<u32>>();
