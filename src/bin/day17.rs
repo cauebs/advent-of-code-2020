@@ -44,18 +44,18 @@ impl Position for Pos4D {
     }
 }
 
-fn stays_active<P: Position>(pocket_dimensions: &HashSet<P>, cube: &P) -> bool {
+fn stays_active<P: Position>(cubes: &HashSet<P>, cube: &P) -> bool {
     let active_neighbors = cube
         .neighbors()
-        .filter(|neighbor| pocket_dimensions.contains(&neighbor))
+        .filter(|neighbor| cubes.contains(&neighbor))
         .count();
     (2..=3).contains(&active_neighbors)
 }
 
-fn activates<P: Position>(pocket_dimensions: &HashSet<P>, pos: &P) -> bool {
+fn activates<P: Position>(cubes: &HashSet<P>, pos: &P) -> bool {
     let active_neighbors = pos
         .neighbors()
-        .filter(|neighbor| pocket_dimensions.contains(&neighbor))
+        .filter(|neighbor| cubes.contains(&neighbor))
         .count();
     active_neighbors == 3
 }
