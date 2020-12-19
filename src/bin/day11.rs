@@ -107,8 +107,7 @@ impl SeatsLayout {
                             }
                         })
                         .skip(1)
-                        .filter(|pos| seats_positions.contains(&pos))
-                        .next()
+                        .find(|pos| seats_positions.contains(&pos))
                     })
                     .collect(),
             };
@@ -167,5 +166,5 @@ fn main() {
         .unwrap();
 
     println!("{}", layout.clone().final_occupancy(Rule::Adjacency));
-    println!("{}", layout.clone().final_occupancy(Rule::FieldOfVision));
+    println!("{}", layout.final_occupancy(Rule::FieldOfVision));
 }

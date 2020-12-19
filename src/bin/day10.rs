@@ -55,7 +55,7 @@ fn main() {
     let device_builtin = adapters.iter().max().unwrap() + 3;
     adapters.push(device_builtin);
 
-    adapters.sort();
+    adapters.sort_unstable();
 
     // part 1
     let deltas = full_sequence_deltas(&adapters);

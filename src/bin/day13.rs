@@ -5,20 +5,18 @@ fn apply_chinese_remainder_theorem(constants: &[i64], divisors: &[i64]) -> i64 {
 
     let solution = divisors
         .iter()
-        .zip(constants.into_iter())
+        .zip(constants.iter())
         .map(|(&n, a)| {
             // each term of the solution is divisible (0 mod) by any n other than this
             let term = lcm / n;
 
             // multiply the term until it is congruent to `a mod n`
-            let term = (1..)
+            (1..)
                 .map(|factor| (term * factor))
                 .find(|term| term.rem_euclid(n) == a.rem_euclid(n))
-                .unwrap();
+                .unwrap()
 
             // term is still `0 mod n` for all other n, but `a mod n` for this n
-
-            term
         })
         .sum::<i64>();
 
@@ -33,7 +31,7 @@ fn main() {
     let bus_ids = lines
         .next()
         .unwrap()
-        .split(",")
+        .split(',')
         .map(|s| match s {
             "x" => None,
             id => Some(id.parse().unwrap()),

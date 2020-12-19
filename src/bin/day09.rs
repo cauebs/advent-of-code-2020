@@ -1,3 +1,5 @@
+use std::cmp::Ordering;
+
 fn is_sum_of_two(target: u32, possible_values: &[u32]) -> bool {
     for (i, a) in possible_values.iter().enumerate() {
         for b in possible_values.iter().skip(i + 1) {
@@ -17,10 +19,10 @@ fn find_contiguous_sum(target: u32, slice: &[u32]) -> Option<&[u32]> {
         for (last_pos, &b) in slice.iter().enumerate().skip(first_pos + 1) {
             total += b;
 
-            if total > target {
-                break;
-            } else if total == target {
-                return Some(&slice[first_pos..=last_pos]);
+            match total.cmp(&target) {
+                Ordering::Greater => break,
+                Ordering::Equal => return Some(&slice[first_pos..=last_pos]),
+                _ => {}
             }
         }
     }

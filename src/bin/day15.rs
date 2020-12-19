@@ -47,7 +47,7 @@ fn clever_linear(starting: &[u32], iterations: usize) -> u32 {
 fn main() {
     let numbers = include_str!("../../inputs/day15.txt")
         .trim()
-        .split(",")
+        .split(',')
         .map(str::parse)
         .collect::<Result<Vec<u32>, _>>()
         .unwrap();
